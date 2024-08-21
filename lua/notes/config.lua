@@ -21,6 +21,7 @@ M.defaults = {
 }
 
 M.options = M.defaults
+
 M.default_mappings = {
     find_note = { "<leader>ns", { silent = true, desc = "[N]otes [S]earch" } },
     grep_notes = { "<leader>ng", { silent = true, desc = "[N]otes [G]rep" } },
@@ -30,6 +31,16 @@ M.default_mappings = {
         "<leader>nl",
         { silent = true, desc = "[N]ote [L]ink" },
     },
+    add_project_note = {
+        "<leader>na",
+        { silent = true, desc = "[N]ote [A]dd" },
+    },
+    open_project_note = {
+        "<leader>np",
+        { silent = true, desc = "[N]ote [P]roject" },
+    },
 }
+
+M.project_store = vim.fn.stdpath("data") .. "/notes.nvim/projectNotes.json"
 
 return M

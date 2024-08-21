@@ -28,6 +28,21 @@ M.setup = function(options)
 
     map._set_keymaps()
     cmd.create_commands()
+
+    local exists = vim.fn.filereadable(vim.fn.expand(cfg.project_store))
+
+    if exists == 0 then
+        local data_folder = vim.fn.stdpath("data") .. "/notes.nvim"
+        vim.fn.system("mkdir " .. data_folder)
+
+        local file = io.open(vim.fn.expand(cfg.project_store), "w")
+
+        if file ~= nil then
+            file:write(vim.json.encode({ foo = "bar" }))
+            file:flush()
+            file:close()
+        end
+    end
 end
 
 return M

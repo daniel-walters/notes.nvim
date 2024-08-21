@@ -1,5 +1,6 @@
 local cfg = require("notes.config")
 local api = require("notes.api")
+local project = require("notes.project_notes")
 
 local M = {}
 
@@ -89,4 +90,45 @@ M.open_linked_note = function()
         end
     end
 end
+
+M.add_project_note = function()
+    local key = project._get_git_key()
+    if key == "/" then
+        return
+    end
+
+    local file_string = vim.fn.readfile(cfg.project_store)
+    local store = vim.json.decode(file_string[1])
+
+    local cur_file = vim.api.nvim_buf_get_name(0)
+
+    store[key] = cur_file
+
+    local file = io.open(vim.fn.expand(cfg.project_store), "w")
+
+    if file then
+        file:write(vim.json.encode(store))
+        file:flush()
+        file:close()
+    end
+
+    print("NOTES.nvim: Project note set to " .. cur_file)
+end
+
+M.open_project_note = function()
+    local key = project._get_git_key()
+    if key == "/" then
+        return
+    end
+
+    local file_string = vim.fn.readfile(cfg.project_store)
+    local store = vim.json.decode(file_string[1])
+
+    local note = store[key]
+
+    if note then
+        vim.cmd.edit(note)
+    end
+end
+
 return M
