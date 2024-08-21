@@ -26,6 +26,11 @@ M.setup = function(options)
         cfg.options.mappings = cfg.default_mappings
     end
 
+    if package.loaded["telescope"] == nil then
+        cfg.options.mappings["find_note"] = nil
+        cfg.options.mappings["grep_notes"] = nil
+    end
+
     map._set_keymaps()
     cmd.create_commands()
 
