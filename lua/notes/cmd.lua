@@ -26,5 +26,21 @@ M.create_commands = function()
         end,
     })
 
+    vim.api.nvim_create_user_command("NoteToday", function()
+        api.open_daily_note(os.time())
+    end, { nargs = 0 })
 
+    vim.api.nvim_create_user_command("NoteYesterday", function()
+        local time = os.time()
+        local time_yesterday = time - (24 * 60 * 60)
+
+        api.open_daily_note(time_yesterday)
+    end, { nargs = 0 })
+
+    vim.api.nvim_create_user_command("NoteTomorrow", function()
+        local time = os.time()
+        local time_tomorrow = time + (24 * 60 * 60)
+
+        api.open_daily_note(time_tomorrow)
+    end, { nargs = 0 })
 return M
