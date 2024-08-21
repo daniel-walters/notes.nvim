@@ -26,6 +26,9 @@ M.default_mappings = {
     grep_notes = { "<leader>ng", { silent = true, desc = "[N]otes [G]rep" } },
     open_note = { "<leader>no", { silent = true, desc = "[N]ote [O]pen" } },
     note_today = { "<leader>nd", { silent = true, desc = "[N]ote [D]aily" } },
+    open_linked_note = {
+        "<leader>nl",
+        { silent = true, desc = "[N]ote [L]ink" },
     },
 }
 

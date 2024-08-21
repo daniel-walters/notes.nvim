@@ -57,5 +57,36 @@ M.grep_notes = function()
     })
 end
 
+M.open_linked_note = function()
+    local line = vim.api.nvim_get_current_line()
+    local cursor_position = vim.fn.col(".")
 
+    for start_col, end_col in string.gmatch(line, "()%[%[.-%]%]()") do
+        if cursor_position >= start_col and cursor_position < end_col then
+            local note_name = string.sub(line, start_col + 2, end_col - 3)
+
+            for _, ext in pairs(cfg.options.note_extensions) do
+                local findCmd = "find "
+                    .. cfg.options.notes_folder
+                    .. " -type f -name '"
+                    .. note_name
+                    .. "."
+                    .. ext
+                    .. "'"
+
+                local handle = io.popen(findCmd)
+
+                if handle ~= nil then
+                    local res = handle:read("*a")
+                    handle:close()
+
+                    if res ~= "" then
+                        api.open_note(note_name .. "." .. ext)
+                        return
+                    end
+                end
+            end
+        end
+    end
+end
 return M
