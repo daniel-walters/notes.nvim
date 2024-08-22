@@ -64,21 +64,21 @@ The following setup options with default values are provided when installing not
 
 # Usage
 ## Commands
-`:NoteOpen <filename>` - Opens or creates `filename`. `filename` must be relative to `notes_folder`, autocomplete is provided.
-`:NoteToday` - Open the daily note for today
-`:NoteYesterday` - Open the daily note for yesterday
-`:NoteTomorrow` - Open the daily note for tomorrow
-`:NoteProject` - Open the git branch specific project note
-`:NoteProjectAdd` - Assign the current note to the current git branch
+- `:NoteOpen <filename>` - Opens or creates `filename`. `filename` must be relative to `notes_folder`, autocomplete is provided.
+- `:NoteToday` - Open the daily note for today
+- `:NoteYesterday` - Open the daily note for yesterday
+- `:NoteTomorrow` - Open the daily note for tomorrow
+- `:NoteProject` - Open the git branch specific project note
+- `:NoteProjectAdd` - Assign the current note to the current git branch
 
 ## Mappings
-`<leader>ns` - Search through your notes by filename using Telescope
-`<leader>ng` - Grep search through your notes using Telescope
-`<leader>no` - Open or create a note
-`<leader>nd` - Open or create the daily note
-`<leader>nl` - Open the linked note under the cursor
-`<leader>na` - Assign the current note to the current git branch
-`<leader>np` - Open the git branch specific project note
+- `<leader>ns` - Search through your notes by filename using Telescope
+- `<leader>ng` - Grep search through your notes using Telescope
+- `<leader>no` - Open or create a note
+- `<leader>nd` - Open or create the daily note
+- `<leader>nl` - Open the linked note under the cursor
+- `<leader>na` - Assign the current note to the current git branch
+- `<leader>np` - Open the git branch specific project note
 
 ## Linked notes
 notes.nvim currently only supports notes referenced as such: `[[My other note]]`.
