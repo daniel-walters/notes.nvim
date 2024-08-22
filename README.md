@@ -83,3 +83,6 @@ The following setup options with default values are provided when installing not
 ## Linked notes
 notes.nvim currently only supports notes referenced as such: `[[My other note]]`.
 Hovering over the link and pressing the keymap (default `<leader>nl`) will search your `notes_folder` for `My other note` and open it.
+
+# TODOs
+- Extend the templating API for custom use cases
