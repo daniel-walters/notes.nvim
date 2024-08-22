@@ -23,7 +23,7 @@ return {
 
 For a full list of setup options, view [Configuration](#config)
 
-# Configuration
+# <a name="config"></a>Configuration
 The following setup options with default values are provided when installing notes.nvim:
 ```lua
 {
