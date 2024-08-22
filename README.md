@@ -58,7 +58,7 @@ The following setup options with default values are provided when installing not
             { silent = true, desc = "[N]ote [P]roject" },
         },
     },
-    --- The date format to use with the daily_note
+    --- The date format to use with the daily_note. `man strftime` for format options
     date_format = "%d-%m-%y",
     --- The file name daily note will be created with. NOTE: Must include `%DATE%` to be unique.
     daily_note_format = "%DATE%.md",
