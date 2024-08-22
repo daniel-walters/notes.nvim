@@ -1,13 +1,18 @@
 # notes.nvim
-A simple neovim plugin for framework agnostic note taking
+A simple neovim plugin for note taking
 # Features
 - Search through all your notes with [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - Navigate between notes that reference eachother
 - Create a 'daily' note using fully customizable templates
 - Save a project specific note against the git branch you're working on
 # Installation
-Install the plugin using any package manager of your choice. If using [Telescope](https://github.com/nvim-telescope/telescope.nvim), you must load it before notes.nvim  to opt into the search functionality.
-## E.g. Using Lazy
+## Setup
+notes.nvim requires you to point it to a directory containing your notes, and your note templates.
+If you don't store your notes in this way you could point your `notes_folder` to your root directory but be aware of the added scope when searching through your notes.
+
+## Installation
+Install the plugin using any package manager of your choice. If using [Telescope](https://github.com/nvim-telescope/telescope.nvim), you must load it before notes.nvim to opt into the search functionality.
+### E.g. Using Lazy
 ```lua
 return {
   'daniel-walters/notes.nvim',
@@ -85,4 +90,8 @@ notes.nvim currently only supports notes referenced as such: `[[My other note]]`
 Hovering over the link and pressing the keymap (default `<leader>nl`) will search your `notes_folder` for `My other note` and open it.
 
 # TODOs
+- :checkhealth
 - Extend the templating API for custom use cases
+- Add autocompletion when linking other notes with `[[]]` syntax
+- Extend note linking functionality to markdown links `[]()`
+
