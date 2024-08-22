@@ -39,7 +39,7 @@ The following setup options with default values are provided when installing not
     --- File types to search for within the notes folder
     note_extensions = { "md", "txt" },
     --- Table of mappings which can be individually overwritten.
-    --- Each value can be either a string or table.
+    --- Each value can be either a string with the keymap, or table with the keymap & options.
     mappings = {
         find_note = { "<leader>ns", { silent = true, desc = "[N]otes [S]earch" } },
         grep_notes = { "<leader>ng", { silent = true, desc = "[N]otes [G]rep" } },
