@@ -1,6 +1,7 @@
 local api = require("notes.api")
 local cfg = require("notes.config")
 local map = require("notes.map")
+local project = require("notes.project_notes")
 
 local M = {}
 
@@ -51,6 +52,16 @@ M.create_commands = function()
 
     vim.api.nvim_create_user_command("NoteProjectAdd", function()
         map.add_project_note()
+    end, { nargs = 0 })
+
+    vim.api.nvim_create_user_command("NotesProjectClear", function()
+        local file = io.open(vim.fn.expand(cfg.project_store), "w")
+
+        if file then
+            file:write(vim.json.encode({ foo = "bar" }))
+            file:flush()
+            file:close()
+        end
     end, { nargs = 0 })
 end
 

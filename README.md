@@ -75,6 +75,7 @@ The following setup options with default values are provided when installing not
 - `:NoteTomorrow` - Open the daily note for tomorrow
 - `:NoteProject` - Open the git branch specific project note
 - `:NoteProjectAdd` - Assign the current note to the current git branch
+- `:NotesProjectClear` - Clear all saved project notes
 
 ## Mappings
 - `<leader>ns` - Search through your notes by filename using Telescope
