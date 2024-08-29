@@ -91,7 +91,6 @@ notes.nvim currently only supports notes referenced as such: `[[My other note]]`
 Hovering over the link and pressing the keymap (default `<leader>nl`) will search your `notes_folder` for `My other note` and open it.
 
 # TODOs
-- :checkhealth
 - Extend the templating API for custom use cases
 - Add autocompletion when linking other notes with `[[]]` syntax
 - Extend note linking functionality to markdown links `[]()`
